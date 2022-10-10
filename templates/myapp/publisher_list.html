@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ list {{ object_list }}
+
+{% for publisher in object_list %}
+<li>{{ publisher.name }}</li>
+ <form method="post">{% csrf_token %}
+    <p>Are you sure you want to delete "{{ publisher }}"?</p>
+    {{ form }}
+    <input type="submit" value="Confirm">
+</form>
+{% endfor %}
+
+{{ name_for_variable_in_template }}
+</body>
+</html>
